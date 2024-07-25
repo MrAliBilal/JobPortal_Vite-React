@@ -47,9 +47,6 @@ Follow these steps to set up the project on your local machine:
 
 ## Contact
 
-For any questions or suggestions, feel free to reach out via [GitHub](https://github.com/AliBilal-1/).
-
----
+For any questions or suggestions, feel free to reach out via [GitHub](https://github.com/MrAliBilal/).
 
 Happy coding!
-```
