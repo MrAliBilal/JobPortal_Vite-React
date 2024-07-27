@@ -16,7 +16,7 @@ Follow these steps to set up the project on your local machine:
 
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/AliBilal-1/JobPortal_Vite-React
+   git clone https://github.com/MrAliBilal/JobPortal_Vite-React
    cd JobPortal_Vite-React
 
 2. **Install dependencies:**
@@ -44,6 +44,8 @@ Follow these steps to set up the project on your local machine:
 - **Frontend:** React, Vite, TailwindCSS
 - **Backend:** JSON Server
 - **Authentication:** Clerk
+
+Happy Coding
 
 ## Contact
 
