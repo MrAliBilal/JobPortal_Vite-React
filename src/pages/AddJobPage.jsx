@@ -1,4 +1,9 @@
+import { useState } from "react";
+
 const AddJobPage = () => {
+
+  const [value, setValue] = useState({title: '', type: '', location : '', description : '', salary : '', companyName : '', companyDescription : '', contactEmail : '', contactPhone : ''});
+
   return (
         <section className ="bg-indigo-50">
       <div className ="container m-auto max-w-2xl py-24">
@@ -17,6 +22,8 @@ const AddJobPage = () => {
                 name="type"
                 className ="border rounded w-full py-2 px-3"
                 required
+                value={value.type}
+                onChange={(e) => setValue ({type : e.target.value})}
               >
                 <option value="Full-Time">Full-Time</option>
                 <option value="Part-Time">Part-Time</option>
@@ -36,6 +43,8 @@ const AddJobPage = () => {
                 className ="border rounded w-full py-2 px-3 mb-2"
                 placeholder="eg. Beautiful Apartment In Miami"
                 required
+                value={value.title}
+                onChange={e => setValue ({title : e.target.value})}
               />
             </div>
             <div className ="mb-4">
@@ -50,6 +59,8 @@ const AddJobPage = () => {
                 className ="border rounded w-full py-2 px-3"
                 rows="4"
                 placeholder="Add any job duties, expectations, requirements, etc"
+                value={value.description}
+                onChange={e => setValue ({description : e.target.value})}
               ></textarea>
             </div>
 
@@ -62,6 +73,8 @@ const AddJobPage = () => {
                 name="salary"
                 className ="border rounded w-full py-2 px-3"
                 required
+                value={value.salary}
+                onChange={(e) => setValue ({salary : e.target.value})}
               >
                 <option value="Under $50K">Under $50K</option>
                 <option value="$50K - 60K">$50K - $60K</option>
@@ -87,7 +100,9 @@ const AddJobPage = () => {
                 name='location'
                 className ='border rounded w-full py-2 px-3 mb-2'
                 placeholder='Company Location'
-                required           
+                required
+                value={value.location}
+                onChange={(e) => setValue ({location : e.target.value})}           
               />
             </div>
 
@@ -103,6 +118,8 @@ const AddJobPage = () => {
                 name="company"
                 className ="border rounded w-full py-2 px-3"
                 placeholder="Company Name"
+                value={value.companyName}
+                onChange={(e) => setValue ({companyName : e.target.value})}
               />
             </div>
 
@@ -118,6 +135,8 @@ const AddJobPage = () => {
                 className ="border rounded w-full py-2 px-3"
                 rows="4"
                 placeholder="What does your company do?"
+                value={value.companyDescription}
+                onChange={(e) => setValue ({companyDescription : e.target.value})}
               ></textarea>
             </div>
 
@@ -134,6 +153,8 @@ const AddJobPage = () => {
                 className ="border rounded w-full py-2 px-3"
                 placeholder="Email address for applicants"
                 required
+                value={value.contactEmail}
+                onChange={(e) => setValue ({contactEmail : e.target.value})}
               />
             </div>
             <div className ="mb-4">
@@ -148,6 +169,8 @@ const AddJobPage = () => {
                 name="contact_phone"
                 className ="border rounded w-full py-2 px-3"
                 placeholder="Optional phone for applicants"
+                value={value.contactPhone}
+                onChange={(e) => setValue ({contactPhone : e.target.value})}
               />
             </div>
 
