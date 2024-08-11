@@ -1,12 +1,23 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useParams, Link, useNavigate } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
-import { Link } from 'react-router-dom';
 
 
-const JobPage = () => {
+const JobPage = ({ deleteJob }) => {
     const {id} = useParams;
     const job = useLoaderData ();
-    console.log (job);
+    const navigate = useNavigate ();
+
+
+    const onDeleteClick = (jobId) => {
+      const confirm = window.confirm (`Are you sure to want to delete this '${job.title}' listing?` )
+
+      if(!confirm) return;
+
+      deleteJob(jobId);
+
+      navigate ('/jobs');
+
+    }
 
   return (
     <>
@@ -16,15 +27,15 @@ const JobPage = () => {
           to="/jobs"
           className ="text-indigo-500 hover:text-indigo-600 flex items-center"
         >
-          <FaArrowLeft/> Back to Job Listings
+          <FaArrowLeft/> &nbsp; Back to Job Listings
         </Link>
       </div>
     </section>
 
     <section className ="bg-indigo-50">
       <div className ="container m-auto py-10 px-6">
-        <div className ="grid grid-cols-1 md:grid-cols-70/30 w-full gap-6">
-          <main>
+        <div className ="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+          <main className="md:col-span-2">
             <div
               className ="bg-white p-6 rounded-lg shadow-md text-center md:text-left"
             >
@@ -58,7 +69,7 @@ const JobPage = () => {
           </main>
 
           
-          <aside>
+          <aside className="md:col-span-1" >
             
             <div className ="bg-white p-6 rounded-lg shadow-md">
               <h3 className ="text-xl font-bold mb-6">Company Info</h3>
@@ -91,6 +102,7 @@ const JobPage = () => {
                 >Edit Job</Link
               >
               <button
+                onClick={ () => onDeleteClick (job.id) }
                 className ="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
               >
                 Delete Job
