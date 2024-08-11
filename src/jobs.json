@@ -83,6 +83,20 @@
         "contactEmail": "contact@ipsumlorem.com",
         "contactPhone": "555-555-5555"
       }
+    },
+    {
+      "id": "1fbb",
+      "title": "Junior React Developer",
+      "type": "Full-Time",
+      "location": "Denver, CO",
+      "description": "We are looking for a Junior Front-End Developer to join our innovative team in Denver, CO. This is a great opportunity for someone looking to grow their skills in a supportive environment. Basic knowledge of React is required.",
+      "salary": "Under $50K",
+      "company": {
+        "companyName": "TechWave Solutions",
+        "companyDescription": "TechWave Solutions is a fast-growing company specializing in web and mobile development. We focus on delivering high-quality solutions and creating a positive work culture.",
+        "contactEmail": "contact@techwavesolutions.com",
+        "contactPhone": "555-555-5555"
+      }
     }
   ]
 }
