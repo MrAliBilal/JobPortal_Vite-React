@@ -1,5 +1,6 @@
 import { useLoaderData, useParams, Link, useNavigate } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 
 const JobPage = ({ deleteJob }) => {
@@ -14,6 +15,8 @@ const JobPage = ({ deleteJob }) => {
       if(!confirm) return;
 
       deleteJob(jobId);
+
+      toast.success ('Job has delete successfully');
 
       navigate ('/jobs');
 
